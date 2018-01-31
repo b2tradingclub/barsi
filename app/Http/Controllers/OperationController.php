@@ -16,7 +16,7 @@ class OperationController extends Controller
     public function index()
     {
         $operations = Operation::all();
-        return view('operations.index');
+        return view('operations.index', compact('operations'));
     }
 
     /**
