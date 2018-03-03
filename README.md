@@ -11,9 +11,11 @@ $ make setup
 ```
 Ao final de todo o processo, você verá algo assim:
 
-```application_1  | 2018-03-03 14:39:51,460 INFO success: nginx entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+```
+application_1  | 2018-03-03 14:39:51,460 INFO success: nginx entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
 application_1  | 2018-03-03 14:39:51,460 INFO success: php-fpm entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
-application_1  | 2018-03-03 14:39:51,460 INFO success: crond entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)```
+application_1  | 2018-03-03 14:39:51,460 INFO success: crond entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+```
 
 Esse pedaço de log mostra que o **nginx**, **php-fpm** e **crond** estão rodando com sucesso.
 
