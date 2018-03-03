@@ -31,3 +31,22 @@ Uma **APP_KEY** será gerada em seu .env e tanto a migration quanto o seed serã
 Agora é só acessar a aplicação em: http://localhost:8000
 
 Na próxima vez que for desenvolver, você pode executar diretamente **make up** pois já estará tudo configurado.
+
+**Testando a imagem de produção**
+
+Você ainda pode executar testes nas configuraçes da imagem que será gerada para produção. Para isso, você precisa do [goss](https://github.com/aelsabbahy/goss) instalado(em seu pc). E então:
+
+```$ make image:test```
+
+```
+...
+Package: supervisor: version: matches expectation: [["3.3.3-r1"]]
+Package: php7: installed: matches expectation: [true]
+Package: php7: version: matches expectation: [["7.1.12-r0"]]
+...
+
+Total Duration: 0.237s
+Count: 32, Failed: 0, Skipped: 0
+INFO: Deleting container
+```
+
