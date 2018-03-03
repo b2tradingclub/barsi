@@ -4,6 +4,7 @@ Barsi é uma aplicaço web para a gestão de investimentos em ações, inicialme
 # Setup com docker
 
 Após clonar o projeto, rode na raiz do projeto:
+
 **Note**: Estou considerando que você esteja usando **Linux**.
 
 ```
