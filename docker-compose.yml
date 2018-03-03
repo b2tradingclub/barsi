@@ -1,0 +1,29 @@
+version: '2.0'
+services:
+
+  application:
+    build:
+      context: .
+    volumes:
+      - ./:/var/www/html
+      - ./docker/logs/nginx:/var/log/nginx
+      - ./docker/logs/php7:/var/log/php7
+    ports:
+      - "8000:8000"
+    depends_on:
+      - database
+
+  database:
+    image: mariadb:10.2
+    restart: always
+    environment:
+      - MYSQL_DATABASE=${DB_DATABASE}
+      - MYSQL_ROOT_PASSWORD=${DB_PASSWORD}
+    ports:
+      - "3307:3306"
+    volumes:
+      - database-data:/var/lib/mysql
+
+volumes:
+  database-data:
+    driver: "local"
