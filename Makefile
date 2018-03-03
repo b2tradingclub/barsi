@@ -1,3 +1,6 @@
+PROJECT=`pwd | xargs basename`
+TESTIMAGE=${PROJECT}:testing
+
 up:
 	docker-compose up --build
 
@@ -22,3 +25,10 @@ key\:db:
 	docker-compose exec application php artisan key:generate && php artisan config:clear
 	echo "Migrating and seeding..."
 	docker-compose exec application php artisan migrate --seed
+
+migrate:
+	docker-compose exec application php artisan migrate
+
+image\:test:
+	docker build -f Dockerfile.prod -t ${TESTIMAGE} .
+	GOSS_SLEEP=3 dgoss run -i ${TESTIMAGE}
